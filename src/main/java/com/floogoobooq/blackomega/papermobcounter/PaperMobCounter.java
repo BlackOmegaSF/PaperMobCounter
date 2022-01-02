@@ -1,6 +1,7 @@
 package com.floogoobooq.blackomega.papermobcounter;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -245,7 +246,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                         try {
                             Scoreboard board = customBoards.get(player.getUniqueId());
                             if (board == null) {
-                                sender.sendMessage("No scoreboard initialized for " + player.getDisplayName() + ". Make sure to start a count before stopping.");
+                                sender.sendMessage("No scoreboard initialized for " + PlainTextComponentSerializer.plainText().serialize(player.displayName()) + ". Make sure to start a count before stopping.");
                                 return true;
                             }
 
@@ -295,7 +296,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                         try {
                             Scoreboard board = customBoards.get(player.getUniqueId());
                             if (board == null) {
-                                sender.sendMessage("No scoreboard initialized for " + player.getDisplayName() + ". Make sure to start a count before stopping.");
+                                sender.sendMessage("No scoreboard initialized for " + PlainTextComponentSerializer.plainText().serialize(player.displayName()) + ". Make sure to start a count before stopping.");
                                 return true;
                             }
 
