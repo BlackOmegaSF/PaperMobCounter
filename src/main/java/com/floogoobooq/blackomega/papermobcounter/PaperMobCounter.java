@@ -108,7 +108,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
         for (Map.Entry<UUID, HashSet<EntityType>> entry : entityTracker.entrySet()) {
             for(EntityType entityEntry : entry.getValue()) {
                 int score = Objects.requireNonNull(customBoards.get(entry.getKey()).getObjective("Kill Counter")).getScore(entityEntry.toString()).getScore();
-                saveData.set(entry.getKey().toString() + "." + entityEntry.toString(), score);
+                saveData.set(entry.getKey().toString() + "." + entityEntry, score);
             }
         }
 
@@ -212,7 +212,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                                 etList = new HashSet<>();
                             }
                             if (etList.contains(toCount)) {
-                                sender.sendMessage("Already counting " + toCount.toString());
+                                sender.sendMessage("Already counting " + toCount);
                                 return true;
                             }
 
@@ -268,7 +268,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                                     saveData.set(player.getUniqueId().toString(), null);
                                     return true;
                                 }
-                                saveData.set(player.getUniqueId().toString() + "." + entityName, null);
+                                saveData.set(player.getUniqueId() + "." + entityName, null);
                                 entityTracker.put(player.getUniqueId(), etList);
 
                             } else {
