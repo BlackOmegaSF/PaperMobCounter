@@ -27,10 +27,10 @@ import java.util.regex.Pattern;
 
 public class PaperMobCounter extends JavaPlugin implements Listener {
 
-    private HashMap<UUID, Scoreboard> customBoards = new HashMap<UUID, Scoreboard>();
-    private HashMap<UUID, HashSet<EntityType>> entityTracker = new HashMap<UUID, HashSet<EntityType>>();
+    private final HashMap<UUID, Scoreboard> customBoards = new HashMap<>();
+    private final HashMap<UUID, HashSet<EntityType>> entityTracker = new HashMap<>();
     private ScoreboardManager sbm;
-    private HashSet<UUID> playersToScoreboard = new HashSet<UUID>();
+    private final HashSet<UUID> playersToScoreboard = new HashSet<>();
 
     File saveFile;
     FileConfiguration saveData;
