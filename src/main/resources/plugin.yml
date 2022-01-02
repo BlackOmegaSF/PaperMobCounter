@@ -1,7 +1,7 @@
 name: PaperMobCounter
 version: 1.0
 main: com.floogoobooq.blackomega.papermobcounter.PaperMobCounter
-api-version: 1.15
+api-version: 1.18
 commands:
   countmobs:
     description: Counts mobs for players
