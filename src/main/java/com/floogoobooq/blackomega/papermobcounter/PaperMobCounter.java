@@ -107,7 +107,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
         //Save data to saveFile
         for (Map.Entry<UUID, HashSet<EntityType>> entry : entityTracker.entrySet()) {
             for(EntityType entityEntry : entry.getValue()) {
-                int score = customBoards.get(entry.getKey()).getObjective("Kill Counter").getScore(entityEntry.toString()).getScore();
+                int score = Objects.requireNonNull(customBoards.get(entry.getKey()).getObjective("Kill Counter")).getScore(entityEntry.toString()).getScore();
                 saveData.set(entry.getKey().toString() + "." + entityEntry.toString(), score);
             }
         }
