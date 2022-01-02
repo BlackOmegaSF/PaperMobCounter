@@ -17,6 +17,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -145,7 +146,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
     public class CommandHandler implements CommandExecutor {
 
         @Override
-        public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 if (args.length == 0 || args[0].equalsIgnoreCase("help")) {
@@ -361,7 +362,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
     public class EntityTabCompletion implements TabCompleter {
 
         @Override
-        public List<String> onTabComplete(CommandSender commandSender, Command command, String alias, String[] args) {
+        public List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String alias, String[] args) {
 
             List<String> names = new ArrayList<>();
             if (args.length == 1) {
