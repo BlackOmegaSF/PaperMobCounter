@@ -5,4 +5,4 @@ api-version: 1.18
 commands:
   countmobs:
     description: Counts mobs for players
-    usage: Usage is /countmobs [start/stop/reset] [EntityType]
+    usage: Usage is /countmobs <start | stop | reset> <EntityType>
