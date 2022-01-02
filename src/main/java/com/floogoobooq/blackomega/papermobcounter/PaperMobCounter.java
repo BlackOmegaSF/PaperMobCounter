@@ -73,6 +73,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                 customBoards.put(playerUuid, board);
             }
 
+            assert obj != null;
             obj.getScore(entityName).setScore((int)entry.getValue());
             HashSet<EntityType> etList = entityTracker.get(playerUuid);
             if (etList == null) {
