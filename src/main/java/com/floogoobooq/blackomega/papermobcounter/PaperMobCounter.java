@@ -1,5 +1,6 @@
 package com.floogoobooq.blackomega.papermobcounter;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -69,7 +70,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                 obj = board.getObjective("Kill Counter");
             } else {
                 board = sbm.getNewScoreboard();
-                obj = board.registerNewObjective("Kill Counter", "dummy", "Mob Kill Counter");
+                obj = board.registerNewObjective("Kill Counter", "dummy", Component.text("Mob Kill Counter"));
                 obj.setDisplaySlot(DisplaySlot.SIDEBAR);
                 customBoards.put(playerUuid, board);
             }
@@ -200,7 +201,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                             //Register new objective in scoreboard using info here
                             Objective obj = board.getObjective("Kill Counter");
                             if (obj == null) {
-                                obj = board.registerNewObjective("Kill Counter", "dummy", "Mob Kill Counter");
+                                obj = board.registerNewObjective("Kill Counter", "dummy", Component.text("Mob Kill Counter"));
                                 obj.setDisplaySlot(DisplaySlot.SIDEBAR);
                             }
 
