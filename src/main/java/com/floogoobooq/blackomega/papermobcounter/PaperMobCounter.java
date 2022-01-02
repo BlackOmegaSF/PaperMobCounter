@@ -144,12 +144,6 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
     //Command responder class
     public class CommandHandler implements CommandExecutor {
 
-        final private String _START = "START";
-        final private String _RESUME = "RESUME";
-        final private String _STOP = "STOP";
-        final private String _GETCOUNT = "GETCOUNT";
-        final private String _RESET = "RESET";
-
         @Override
         public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
             if (sender instanceof Player) {
@@ -169,6 +163,11 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                 String entityName = toCount.toString();
                 //String entityShortName = entityName.substring(0, Math.min(entityName.length(), 16));  //Trimmed to 16 to avoid error
 
+                final String _START = "START";
+                final String _STOP = "STOP";
+                final String _RESET = "RESET";
+                final String _RESUME = "RESUME";
+                final String _GETCOUNT = "GETCOUNT";
                 switch (args[0].toUpperCase()) {
                     case _START:
                         //TODO Handle start condition
