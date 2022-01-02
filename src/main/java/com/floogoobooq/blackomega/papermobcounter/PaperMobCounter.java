@@ -77,7 +77,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
             obj.getScore(entityName).setScore((int)entry.getValue());
             HashSet<EntityType> etList = entityTracker.get(playerUuid);
             if (etList == null) {
-                etList = new HashSet<EntityType>();
+                etList = new HashSet<>();
             }
             etList.add(EntityType.valueOf(entityName));
             entityTracker.put(playerUuid, etList);
@@ -209,7 +209,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                             //Add entity to entity tracker
                             HashSet<EntityType> etList = entityTracker.get(player.getUniqueId());
                             if (etList == null) {
-                                etList = new HashSet<EntityType>();
+                                etList = new HashSet<>();
                             }
                             if (etList.contains(toCount)) {
                                 sender.sendMessage("Already counting " + toCount.toString());
@@ -364,7 +364,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
         @Override
         public List<String> onTabComplete(CommandSender commandSender, Command command, String alias, String[] args) {
 
-            List<String> names = new ArrayList<String>();
+            List<String> names = new ArrayList<>();
             if (args.length == 1) {
                 if (args[0].isEmpty()) {
                     names.add("start");
@@ -403,7 +403,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                     return null;
                 }
 
-                List<String> filteredNames = new ArrayList<String>();
+                List<String> filteredNames = new ArrayList<>();
                 if (!args[1].isEmpty()) {
                     Pattern pattern = Pattern.compile(args[1].toUpperCase());
                     for (String name : names) {
