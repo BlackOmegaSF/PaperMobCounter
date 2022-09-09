@@ -171,24 +171,8 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                 final String _GETCOUNT = "GETCOUNT";
                 switch (args[0].toUpperCase()) {
                     case _START:
-                        //TODO Handle start condition
+                        // Handle start condition
                         try {
-                            //int countLimit;
-                            //boolean scoreboardVisible;
-
-                            /*
-                            try {
-                                countLimit = Integer.parseInt(args[2]);
-                                if (countLimit < 0) {
-                                    throw new NumberFormatException();
-                                }
-                            } catch (NumberFormatException e) {
-                                sender.sendMessage("Invalid count");
-                            }
-                            */
-
-                            //scoreboardVisible = Boolean.parseBoolean(args[3]);
-
                             //Get or create scoreboard for player
                             Scoreboard board = customBoards.get(player.getUniqueId());
                             if (board == null) {
@@ -227,7 +211,6 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                             return true;
 
                         } catch (IndexOutOfBoundsException e) {
-                            //TODO Handle the exception with a message
                             sender.sendMessage("Too few arguments");
                             return false;
                         }
@@ -240,7 +223,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                      */
 
                     case _STOP:
-                        //TODO Handle stop condition
+                        // Handle stop condition
                         try {
                             Scoreboard board = customBoards.get(player.getUniqueId());
                             if (board == null) {
@@ -290,7 +273,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                      */
 
                     case _RESET:
-                        //TODO Handle reset condition
+                        // Handle reset condition
                         try {
                             Scoreboard board = customBoards.get(player.getUniqueId());
                             if (board == null) {
