@@ -184,7 +184,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                             //Register new objective in scoreboard using info here
                             Objective obj = board.getObjective("Kill Counter");
                             if (obj == null) {
-                                obj = board.registerNewObjective("Kill Counter", "dummy", Component.text("Mob Kill Counter"));
+                                obj = board.registerNewObjective("Kill Counter", Criteria.DUMMY, Component.text("Mob Kill Counter"));
                                 obj.setDisplaySlot(DisplaySlot.SIDEBAR);
                             }
 
@@ -243,7 +243,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                                 board.resetScores(entityName);
 
                                 etList.remove(toCount);
-                                if (etList.size() == 0) {
+                                if (etList.isEmpty()) {
                                     obj.unregister();
                                     player.setScoreboard(sbm.getMainScoreboard());
                                     customBoards.remove(player.getUniqueId());
