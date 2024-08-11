@@ -1,4 +1,4 @@
-package com.floogoobooq.blackomega.papermobcounter;
+package com.kleinercode.plugins.papermobcounter;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
