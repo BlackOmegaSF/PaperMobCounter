@@ -70,7 +70,7 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
                 obj = board.getObjective("Kill Counter");
             } else {
                 board = sbm.getNewScoreboard();
-                obj = board.registerNewObjective("Kill Counter", "dummy", Component.text("Mob Kill Counter"));
+                obj = board.registerNewObjective("Kill Counter", Criteria.DUMMY, Component.text("Mob Kill Counter"));
                 obj.setDisplaySlot(DisplaySlot.SIDEBAR);
                 customBoards.put(playerUuid, board);
             }
