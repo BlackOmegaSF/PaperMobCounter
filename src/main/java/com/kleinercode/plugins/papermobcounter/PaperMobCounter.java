@@ -99,8 +99,8 @@ public class PaperMobCounter extends JavaPlugin implements Listener {
 
 
         //Register the command
-        this.getCommand("countmobs").setExecutor(new CommandHandler());
-        this.getCommand("countmobs").setTabCompleter(new EntityTabCompletion());
+        Objects.requireNonNull(this.getCommand("countmobs")).setExecutor(new CommandHandler());
+        Objects.requireNonNull(this.getCommand("countmobs")).setTabCompleter(new EntityTabCompletion());
 
     }
 
